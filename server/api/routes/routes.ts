@@ -6,7 +6,7 @@ class Routes {
     }
 
     getRoutes(app: Application): void {
-        
+        app.get('/', (req, res) => res.json('Hello Word'))
     }
 };
 
