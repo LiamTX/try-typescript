@@ -2,29 +2,33 @@
   "name": "try-typescript",
   "version": "1.0.0",
   "description": "",
-  "main": "server/server.ts",
+  "main": "index.js",
   "scripts": {
-    "start": "node ./build/server.js",
-    "dev": "ts-node-dev --respawn --transpile-only ./server/server.ts",
-    "build": "tsc"
+    "dev": "npx nodemon --exec ts-node src/index.ts",
+    "typeorm": "npx ts-node ./node_modules/typeorm/cli.js",
+    "typeorm:migration": "ts-node ./node_modules/typeorm/cli.js migration:run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LiamTX/try-typescript.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1",
-    "http": "0.0.1-security",
-    "morgan": "^1.10.0",
-    "mysql2": "^2.2.5",
-    "sequelize-cli": "^6.2.0"
+  "bugs": {
+    "url": "https://github.com/LiamTX/try-typescript/issues"
   },
+  "homepage": "https://github.com/LiamTX/try-typescript#readme",
   "devDependencies": {
     "@types/express": "^4.17.11",
-    "@types/morgan": "^1.9.2",
-    "@types/sequelize": "^4.28.9",
-    "sequelize": "^6.3.5",
+    "nodemon": "^2.0.7",
     "ts-node": "^9.1.1",
-    "ts-node-dev": "^1.1.1",
     "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.30"
   }
 }
