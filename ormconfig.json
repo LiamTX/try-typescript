@@ -5,12 +5,12 @@
    "username": "root",
    "password": "liam1514",
    "database": "tsapi",
-   "logging": true,
+   "logging": false,
    "entities": [
-      "src/app/models/*.ts"
+      "dist/src/database/models/*.ts"
    ],
    "migrations": [
-      "src/database/migrations/*.ts"
+      "dist/src/database/migrations/*.ts"
    ],
    "cli": {
       "migrationsDir": "src/database/migrations"

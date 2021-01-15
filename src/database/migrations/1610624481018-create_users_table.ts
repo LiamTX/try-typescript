@@ -1,6 +1,7 @@
-import { MigrationInterface, QueryRunner, Table } from 'typeorm';
+// @ts-ignore
+import { MigrationInterface, QueryRunner, Table } from "typeorm";
 
-export class createUsersTable1610610316010 implements MigrationInterface {
+export class createUsersTable1610624481018 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(new Table({
@@ -8,9 +9,14 @@ export class createUsersTable1610610316010 implements MigrationInterface {
             columns: [
                 {
                     name: 'id',
-                    type: 'integer',
+                    type: 'int',
                     isPrimary: true,
+                    isGenerated: true,
                     generationStrategy: 'increment'
+                },
+                {
+                    name: 'name',
+                    type: 'varchar'
                 },
                 {
                     name: 'email',
@@ -26,7 +32,7 @@ export class createUsersTable1610610316010 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.query('DROP EXTENSION "uuid-ossp"')
+        await queryRunner.dropTable('users');
     }
 
 }

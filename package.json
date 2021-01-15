@@ -1,34 +1,35 @@
 {
-  "name": "try-typescript",
+  "name": "try-3",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/src/index.js",
   "scripts": {
+    "start": "node dist/src/index.js",
     "dev": "npx nodemon --exec ts-node src/index.ts",
-    "typeorm": "npx ts-node ./node_modules/typeorm/cli.js",
-    "typeorm:migration": "ts-node ./node_modules/typeorm/cli.js migration:run"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/LiamTX/try-typescript.git"
+    "build": "tsc",
+    "typeorm:migration:run": "ts-node ./node_modules/typeorm/cli.js migration:run"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/LiamTX/try-typescript/issues"
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "express": "^4.17.1",
+    "jwt-simple": "^0.5.6",
+    "mysql2": "^2.2.5",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.30"
   },
-  "homepage": "https://github.com/LiamTX/try-typescript#readme",
   "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
     "@types/express": "^4.17.11",
+    "@types/jwt-simple": "^0.5.33",
+    "@types/passport": "^1.0.5",
+    "@types/passport-jwt": "^3.0.3",
     "nodemon": "^2.0.7",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.3"
-  },
-  "dependencies": {
-    "express": "^4.17.1",
-    "mysql2": "^2.2.5",
-    "reflect-metadata": "^0.1.13",
-    "typeorm": "^0.2.30"
   }
 }

@@ -1,10 +1,6 @@
 import "reflect-metadata";
-import express from 'express';
+import './database/connection';
 
-import './database/connect';
+import api from './api/api';
 
-const app = express();
-
-app.use(express.json());
-
-app.listen(3333, () => console.log('Server started at http://localhost:3333'));
+api.listen(3333, () => console.log('Server started!'));
